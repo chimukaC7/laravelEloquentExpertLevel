@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LaravelIdeaMainSettings">
+    <option name="codeGeneration">
+      <LaravelCodeGeneration>
+        <option name="generationBooleanSettings">
+          <map>
+            <entry key="createDatabaseMigration:inTheNewMenu" value="true" />
+            <entry key="createMailable:inTheNewMenu" value="true" />
+            <entry key="createNotification:inTheNewMenu" value="true" />
+            <entry key="createObserver:inTheNewMenu" value="true" />
+            <entry key="createPolicy:inTheNewMenu" value="true" />
+            <entry key="createResourceController:inTheNewMenu" value="true" />
+            <entry key="createServiceProvider:inTheNewMenu" value="true" />
+          </map>
+        </option>
+        <option name="pluralControllerName" value="false" />
+      </LaravelCodeGeneration>
+    </option>
+    <option name="frameworkFound" value="true" />
+  </component>
+</project>

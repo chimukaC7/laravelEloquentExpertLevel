@@ -27,4 +27,37 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getFullNameAttribute(){
+        return $this->name .' '. $this->surname;
+    }
+
+    public function setNameAttribute($value){
+        $this->attributes['name'] = ucfirst($value);
+    }
+
+    public function setSurnameAttribute($value){
+        $this->attributes['surname'] = ucfirst($value);
+    }
+
+    public function getDaysActiveAttribute(){
+        return $this->created_at->diffInDays($this->updated_at);
+    }
+
+    public function roles(){
+        //to add time stamps to the pivot table, you have to specify withTimestamps
+        //for extra columns to be queriable, you haev to specify withPivot
+        return $this->belongsToMany(Role::class)->withTimestamps()->withPivot(['approved']);
+    }
+
+    //filter the pivot table relationship
+    public function approvedRoles(){
+        return $this->belongsToMany(Role::class)->wherePivot('approved',1);
+    }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Rating;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
@@ -16,6 +17,10 @@ class Book extends Model implements HasMedia
     public function author()
     {
         return $this->belongsTo(Author::class);
+    }
+
+    public function ratings(){
+        return $this->hasMany(Rating::class);
     }
 
     public function registerMediaConversions(Media $media = null)
